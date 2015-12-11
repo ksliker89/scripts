@@ -1,0 +1,44 @@
+#! /bin/bash
+# Author: Kevin Sliker
+# Date: 20151030
+# Usage: This was created to be a simple script that allows a user
+#        to ssh into their home server. We assume the home server will be configured
+# 	 to 192.168.1.* and that they have an account on the server with permissions.
+
+
+
+
+# show instructions to the user
+echo -e "Welcome, follow the prompts below to connect to your home server.\nIt will ask the following server questions:\nServer IP address, Your 'userName' & 'password' on the server."
+
+
+
+# This is a do, while loop to confirm user input is correct
+while [ "$answer" != "yes" ] ; do
+
+	# get ip address from user
+	echo -en "\nEnter the IP address [Example: 192.168.1.2]: "
+	read ipaddress
+
+	# get username and password
+	echo -en "\nEnter your 'username': "
+	read username
+
+	password1="1"
+	password2="2"
+	# check to make sure passwords entered are the same
+	while [ "$password1" != "$password2" ]; do
+		echo -en "\nIf passwords conflict, you will be prompted again..."
+		echo -en "\nEnter your 'password': "
+		read -s password1
+		echo -en "\nEnter your 'password' again to verify: "
+		read -s password2
+	done
+
+	# output back to test
+	echo -e "\n\nYou entered:"
+	echo "IP Address: $ipaddress"
+	echo "Username: $username"
+	echo "Is this correct? [yes/no]"
+	read answer
+done
