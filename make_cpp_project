@@ -1,8 +1,8 @@
 #! /bin/bash
 # this script creates a C++ project including:
-# - *.cpp (driver file) 
-# - *.h (header file)
-# - *.cpp (implementation file for .h)
+# - *.cpp (main file) 
+# - *.hpp (header file)
+# - *.cpp (implementation file for .hpp)
 #
 #############################################################################
 #
@@ -13,8 +13,8 @@
 # post-script: you should have the following in your directory... 
 #
 # example:  project_name.cpp  
-# 	    project_name.h 
-# 	    driver.cpp
+# 	    project_name.hpp 
+# 	    main.cpp
 #
 ##############################################################################
 
@@ -23,34 +23,34 @@
 ##############################################################################
 #####                 This creates the header file                 ###########
 ##############################################################################
-echo "//Author: " > $1.h
-echo "//Date: "$(date) >> $1.h
-echo "//Sources: " >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo "#include<iostream>" >> $1.h
-echo "#include<string>" >> $1.h
-echo "#include<math>" >> $1.h
-echo "#include<fstream>" >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo "#ifndef "${1^^}"_H_INCLUDED" >> $1.h
-echo "#define "${1^^}"_H_INCLUDED" >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo " " >> $1.h
-echo "#endif" >> $1.h
+echo "//Author: " > $1.hpp
+echo "//Date: "$(date) >> $1.hpp
+echo "//Sources: " >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo "#include<iostream>" >> $1.hpp
+echo "#include<string>" >> $1.hpp
+echo "#include<math>" >> $1.hpp
+echo "#include<fstream>" >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo "#ifndef "${1^^}"_H_INCLUDED" >> $1.hpp
+echo "#define "${1^^}"_H_INCLUDED" >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo " " >> $1.hpp
+echo "#endif" >> $1.hpp
 
 
 
 
 ##############################################################################
-######     This creates the implementation file for the .h file      #########
+######     This creates the implementation file for the .hpp file      #########
 ##############################################################################
 echo "//Author: " > $1.cpp
 echo "//Date: "$(date) >> $1.cpp
@@ -60,28 +60,28 @@ echo " " >> $1.cpp
 echo " " >> $1.cpp
 echo " " >> $1.cpp
 echo " " >> $1.cpp
-echo "#include ""\"$1.h\"" >> $1.cpp
+echo "#include ""\"$1.hpp\"" >> $1.cpp
 
 
 
 
 ##############################################################################
-######      This creates the driver file for the project            ##########
+######      This creates the main file for the project            ##########
 ##############################################################################
-echo "//Author: " > driver.cpp
-echo "//Date: "$(date) >> driver.cpp
-echo "//Sources: " >> driver.cpp 
-echo " " >> driver.cpp
-echo " " >> driver.cpp
-echo " " >> driver.cpp
-echo " " >> driver.cpp
-echo " " >> driver.cpp
-echo "#include ""\"$1.h\"" >> driver.cpp
-echo " " >> driver.cpp
-echo " " >> driver.cpp
-echo "int main()" >> driver.cpp
-echo "{" >> driver.cpp
-echo " " >> driver.cpp
-echo " " >> driver.cpp
-echo "    return 0;" >> driver.cpp
-echo "}" >> driver.cpp
+echo "//Author: " > main.cpp
+echo "//Date: "$(date) >> main.cpp
+echo "//Sources: " >> main.cpp 
+echo " " >> main.cpp
+echo " " >> main.cpp
+echo " " >> main.cpp
+echo " " >> main.cpp
+echo " " >> main.cpp
+echo "#include ""\"$1.hpp\"" >> main.cpp
+echo " " >> main.cpp
+echo " " >> main.cpp
+echo "int main()" >> main.cpp
+echo "{" >> main.cpp
+echo " " >> main.cpp
+echo " " >> main.cpp
+echo "    return 0;" >> main.cpp
+echo "}" >> main.cpp
