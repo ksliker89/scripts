@@ -33,7 +33,7 @@ echo " " >> $1.hpp
 echo " " >> $1.hpp
 echo "#include<iostream>" >> $1.hpp
 echo "#include<string>" >> $1.hpp
-echo "#include<math>" >> $1.hpp
+echo "#include<cmath>" >> $1.hpp
 echo "#include<fstream>" >> $1.hpp
 echo " " >> $1.hpp
 echo " " >> $1.hpp
