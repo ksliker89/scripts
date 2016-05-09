@@ -1,0 +1,14 @@
+#! /bin/bash
+# 
+# Author: Kevin Sliker
+# Date: 20161408
+# Usage: This script pulls the current conversions from USD to EUR from yahoo finance
+
+url="http://finance.yahoo.com/currency/converter-pocket-guide/20160508/USD/EUR"
+
+# pull the raw data from url
+curl $url > ex_rate.txt
+
+# parse the data from created file
+#awk '/search_pattern/ {action_to_take_on_matches; another_action; }' file_to_parse
+awk '/Euro/ {getline x; print $0 RS x;}' ex_rate.txt
